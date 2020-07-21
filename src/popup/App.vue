@@ -2,7 +2,7 @@
   <div id="Lupin">
     <div class="header">
       <div class="header-name-container">
-        <h2>닉네임</h2>
+        <h2>타이틀 TITLE</h2>
       </div>
       <div class="header-button-container">
         <i class="fas fa-cog"></i>
@@ -22,7 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p {
-  font-size: 20px;
+@import "../assets/reset.scss";
+#Lupin{
+  display: flex;
+  width: 400px;
+  height: 600px;
+  .header{
+    .header-name-container{
+
+    }
+  }
 }
 </style>

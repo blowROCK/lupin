@@ -15,5 +15,9 @@
     "scripts": [
       "background.js"
     ]
-  }
+  },
+  "permissions": [
+    "notifications",
+    "system.storage"
+  ]
 }
