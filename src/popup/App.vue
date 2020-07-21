@@ -1,16 +1,24 @@
 <template>
   <div id="Lupin">
-    <Navigation />
+    <Header />
+    <el-row>
+      <el-col :span="4">
+        <Side />
+      </el-col>
+      <el-col :span="20">2</el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
-import Navigation from './navi/navigation';
+import Header from './header/header';
+import Side from './side/side';
 
 export default {
   name: 'App',
   components: {
-    Navigation,
+    Header,
+    Side
   },
   data () {
     return {
@@ -28,15 +36,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../assets/reset.scss";
 #Lupin{
-  display: flex;
-  width: 400px;
-  height: 600px;
-  .header{
-    .header-name-container{
-
-    }
-  }
+  width: 250px;
+  height: 400px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 </style>
