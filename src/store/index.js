@@ -13,6 +13,7 @@ export default new Vuex.Store({
     WORKING_PER_WEEK: 5,
     WORKING_PER_DAY: 9,
 
+    calcMode: '하루',
     monthlySalary: 2000000,
     startTime: 10,
     closingTime: 19,

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d8e66e2-4eda-40d2-ac98-e6eaf29b3c97" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../iloom-unit/imports/components/Editor/Product/EditImgSlide.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../iloom-unit/imports/components/Editor/Product/EditImgSlide.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lupin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lupin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/popup/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/popup/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/popup/contents/number.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/popup/contents/number.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/popup/contents/numbers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/popup/contents/numbers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/popup/header/header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/popup/header/header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/getters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/mutation-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/mutation-types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/mutations.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/../iloom-unit/package.json" />
+  </component>
+  <component name="ProjectId" id="1fJ3zKC0uXsOvduhEso7YrL83mk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="enabled" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="js.meteor.library.cached" value="$PROJECT_DIR$/../iloom-unit/.meteor" />
+    <property name="js.meteor.library.was.enabled" value="true" />
+    <property name="js.meteor.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/../node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d8e66e2-4eda-40d2-ac98-e6eaf29b3c97" name="Default Changelist" comment="" />
+      <created>1595922628572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595922628572</updated>
+      <workItem from="1595922631351" duration="235000" />
+      <workItem from="1595922887236" duration="2427000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="598" y="310" key="#TODO" timestamp="1595923082443">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="598" y="310" key="#TODO/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1595923082443" />
+    <state x="412" y="144" key="SettingsEditor" timestamp="1595925318447">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="412" y="144" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1595925318447" />
+    <state x="412" y="144" key="SettingsEditor/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1595922867844" />
+    <state x="720" y="387" width="497" height="299" key="cloudConfig.SelfSettingsDialog" timestamp="1595923129967">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="720" y="387" width="497" height="299" key="cloudConfig.SelfSettingsDialog/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1595923129967" />
+  </component>
+</project>

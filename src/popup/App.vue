@@ -1,6 +1,6 @@
 <template>
   <div id="Lupin">
-    <Header :mode="mode" @on-change-mode="onChangeMode" />
+    <Header :mode="calcMode" @on-change-mode="onChangeMode" />
     <el-row>
       <Numbers v-bind:total="totalMoney" />
     </el-row>
@@ -10,7 +10,6 @@
 <script>
 import Header from "./header/header";
 import Numbers from "./contents/numbers";
-import { SECOND_OF_HOUR } from "../store/getters";
 
 export default {
   name: "App",
@@ -20,23 +19,28 @@ export default {
   },
   data() {
     return {
-      currDate: null,
-      currSeconds: 0,
-      startDate: null,
-      closingDate: null,
-      timer: null,
-      mode: "하루"
+      currDate: new Date(),
+      timer: null
     };
   },
   computed: {
-    monthlySalary() {
-      return this.$store.getters.monthlySalary;
-    },
     startTime() {
       return this.$store.getters.startTime;
     },
     closingTime() {
       return this.$store.getters.closingTime;
+    },
+    startDate() {
+      return this.getDateData({ h: this.startTime });
+    },
+    closingDate() {
+      return this.getDateData({ h: this.closingTime });
+    },
+    calcMode() {
+      return this.$store.getters.calcMode;
+    },
+    monthlySalary() {
+      return this.$store.getters.monthlySalary;
     },
     payday() {
       return this.$store.getters.payday;
@@ -59,48 +63,58 @@ export default {
         this.secondOfHour
       );
     },
+    workedSecond() {
+      return Math.max((this.currDate - this.startDate) / 1000, 0);
+    },
     totalMoney() {
-      return this.currSeconds * this.secondSalary;
+      if (this.calcMode === "하루") {
+        return this.workedSecond * this.secondSalary;
+      } else if (this.calcMode === "한달") {
+        const workingDays = this.getBusinessDatesCount(
+          this.currDate,
+          this.getDateData({
+            m:
+              this.payday > this.currDate.getDate()
+                ? this.currDate.getMonth()
+                : this.currDate.getMonth() + 1,
+            d: this.payday
+          })
+        );
+        const workingSecond = workingDays * 9 * 60 * 60;
+        return (this.workedSecond + workingSecond) * this.secondSalary;
+      }
     }
   },
-  created() {
-    console.log('? : --------------?-------------');
-    this.currDate = new Date();
-    this.startDate = this.getDate(this.startTime);
-    this.closingDate = this.getDate(this.closingTime);
-    this.currSeconds = (this.currDate - this.startDate) / 1000;
-    console.log('this.currSeconds : ', this.currSeconds);
-  },
   mounted() {
-    console.log('1 : --------------1??-------------');
     this.startTimer();
   },
   methods: {
-    updateCurrSeconds(){
-      if(this.mode === '하루'){
-        return (this.currDate - this.startDate) / 1000;
-      }else if(this.mode === '한달'){
-        const monthlySec =
-        return (this.currDate - this.startDate) / 1000;
+    getBusinessDatesCount(startDate, endDate) {
+      let count = 0;
+      let curDate = startDate;
+      while (curDate <= endDate) {
+        const dayOfWeek = curDate.getDay();
+        if (!(dayOfWeek === 6 || dayOfWeek === 0)) count++;
+        curDate.setDate(curDate.getDate() + 1);
       }
+      return count;
     },
-    getDate(hours) {
-      return new Date(
-        this.currDate.getFullYear(),
-        this.currDate.getMonth(),
-        this.currDate.getDate(),
-        hours
-      );
+    getDateData({
+      y = this.currDate.getFullYear(),
+      m = this.currDate.getMonth(),
+      d = this.currDate.getDate(),
+      h = 0
+    }) {
+      return new Date(y, m, d, h);
     },
     startTimer() {
-      this.timer = setInterval(() => (this.currSeconds += 1.5), 1500);
+      this.timer = setInterval(() => (this.currDate = new Date()), 1500);
     },
     stopTimer() {
       clearInterval(this.timer);
     },
     onChangeMode(mode) {
-      this.mode = mode;
-      console.log("mode : ", this.mode);
+      this.$store.dispatch("calcMode", mode);
     }
   }
 };

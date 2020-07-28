@@ -13,13 +13,14 @@
 export default {
   name: "Number",
   props: {
-    num: Number
+    num: Number,
+    order: Number,
   },
   components: {},
   data() {
     return {
       nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      height: 0
+      height: 0,
     };
   },
   mounted() {
@@ -30,8 +31,8 @@ export default {
     display(num) {
       const numberContainer = document.getElementById("number");
       numberContainer.style.transform = `translateY(-${this.height * num}px)`;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -24,11 +24,6 @@ export default {
     changeMode: Function,
     mode: String
   },
-  data() {
-    return {
-      // tabType: "하루"
-    };
-  },
   methods: {
     changeHandler(e) {
       this.$emit("on-change-mode", e);

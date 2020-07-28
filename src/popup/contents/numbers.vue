@@ -2,8 +2,8 @@
   <div id="filp">
     <div class="filp-container">
       <el-row class="numbers-container" type="flex" justify="center">
-        <el-col class="numbers-col" v-for="num in displaySalary">
-          <Number :num="num" />
+        <el-col class="numbers-col" v-for="(num, index) in displaySalary">
+          <Number :order="index" :num="num" />
         </el-col>
       </el-row>
     </div>
@@ -19,6 +19,9 @@ export default {
   },
   props: {
     total: Number
+  },
+  mounted() {
+    // console.log('this.total : ', this.total);
   },
   computed: {
     displaySalary() {
@@ -37,7 +40,7 @@ export default {
       return tmpArr;
     },
     digitCheck(arr) {
-      while (arr.length < 8) {
+      while (arr.length < 9) {
         arr.unshift(0);
       }
       return arr;
@@ -52,7 +55,7 @@ export default {
   height: 1.6rem;
   overflow-y: hidden;
   position: relative;
-  &:nth-child(6) {
+  &:nth-last-child(3) {
     padding-right: 10px;
     &:before {
       content: "";

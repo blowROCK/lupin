@@ -15,6 +15,9 @@ export default {
   },
   [types.SET_PAYDAY] (state, payload) {
     state.payday = payload;
+  },
+  [types.SET_CALC_MODE] (state, payload) {
+    state.calcMode = payload;
   }
 }
 
