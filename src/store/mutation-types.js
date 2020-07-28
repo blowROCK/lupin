@@ -1,1 +1,5 @@
-export const UPDATE_FOO = 'UPDATE_FOO'
+export const SET_MONTHLY_SALARY = 'SET_MONTHLY_SALARY';
+export const SET_YEAR_SALARY = 'SET_YEAR_SALARY';
+export const SET_START_TIME = 'SET_START_TIME';
+export const SET_CLOSING_TIME = 'SET_CLOSING_TIME';
+export const SET_PAYDAY = 'SET_PAYDAY';
