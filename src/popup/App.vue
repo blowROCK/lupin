@@ -4,23 +4,27 @@
     <el-row>
       <Numbers v-bind:total="totalMoney" />
     </el-row>
+    <Modal v-if="showSettingModal"/>
   </div>
 </template>
 
 <script>
 import Header from "./header/header";
 import Numbers from "./contents/numbers";
+import Modal from "./modal/modal";
 
 export default {
   name: "App",
   components: {
     Header,
-    Numbers
+    Numbers,
+    Modal
   },
   data() {
     return {
       currDate: new Date(),
-      timer: null
+      timer: null,
+      showModal: false
     };
   },
   computed: {
@@ -49,10 +53,10 @@ export default {
       return this.$store.getters.SECOND_OF_HOUR;
     },
     workingPerWeek() {
-      return this.$store.getters.WORKING_PER_WEEK;
+      return this.$store.getters.workingPerWeek;
     },
     workingPerDay() {
-      return this.$store.getters.WORKING_PER_DAY;
+      return this.$store.getters.workingPerDay;
     },
     secondSalary() {
       return (
@@ -62,6 +66,9 @@ export default {
         (365 / 7 / 12) /
         this.secondOfHour
       );
+    },
+    showSettingModal() {
+      return this.$store.getters.showSettingModal;
     },
     workedSecond() {
       return Math.max((this.currDate - this.startDate) / 1000, 0);
@@ -73,29 +80,31 @@ export default {
         const workingDays = this.getBusinessDatesCount(
           this.currDate,
           this.getDateData({
-            m:
-              this.payday > this.currDate.getDate()
-                ? this.currDate.getMonth()
-                : this.currDate.getMonth() + 1,
+            m:  this.currDate.getDate() < this.payday
+                ? this.currDate.getMonth() -1
+                : this.currDate.getMonth(),
             d: this.payday
           })
         );
+        console.log('dexter : workingDays : ', workingDays);
         const workingSecond = workingDays * 9 * 60 * 60;
         return (this.workedSecond + workingSecond) * this.secondSalary;
       }
     }
   },
   mounted() {
+    console.log('dexter --------------APP mounted-------------');
     this.startTimer();
   },
   methods: {
-    getBusinessDatesCount(startDate, endDate) {
+    getBusinessDatesCount(date1, date2) {
       let count = 0;
-      let curDate = startDate;
-      while (curDate <= endDate) {
-        const dayOfWeek = curDate.getDay();
+      let startDate = (date1 < date2) ? date1 : date2;
+      const endDate = (date1 > date2) ? date1 : date2;
+      while (startDate <= endDate) {
+        const dayOfWeek = startDate.getDay();
         if (!(dayOfWeek === 6 || dayOfWeek === 0)) count++;
-        curDate.setDate(curDate.getDate() + 1);
+        startDate.setDate(startDate.getDate() + 1);
       }
       return count;
     },
@@ -115,7 +124,13 @@ export default {
     },
     onChangeMode(mode) {
       this.$store.dispatch("calcMode", mode);
-    }
+    },
+    // onOpenModal(){
+    //   this.showModal = true;
+    // },
+    // onCloseModal(){
+    //   this.showModal = false;
+    // }
   }
 };
 </script>

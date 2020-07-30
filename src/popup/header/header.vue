@@ -11,7 +11,7 @@
       </el-radio-group>
     </el-col>
     <el-col :span="4">
-      <el-button class="gearBox" size="mini" icon="el-icon-setting"></el-button>
+      <el-button @click="openModal" class="iconBox" size="mini" icon="el-icon-setting"></el-button>
     </el-col>
   </el-row>
 </template>
@@ -24,9 +24,18 @@ export default {
     changeMode: Function,
     mode: String
   },
+  computed: {
+    showSettingModal() {
+      return this.$store.getters.showSettingModal;
+    }
+  },
   methods: {
     changeHandler(e) {
       this.$emit("on-change-mode", e);
+    },
+    openModal(){
+      console.log('dexter --------------OPEN MODAL-------------');
+      this.$store.dispatch("showSettingModal", true);
     }
   }
 };
@@ -35,7 +44,7 @@ export default {
 #header {
   margin-bottom: 5px;
   text-align: center;
-  .gearBox {
+  .iconBox {
     border: 0;
     font-size: 1rem;
     height: 28px;

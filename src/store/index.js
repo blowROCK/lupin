@@ -10,14 +10,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     SECOND_OF_HOUR: 3600,
-    WORKING_PER_WEEK: 5,
-    WORKING_PER_DAY: 9,
+
+    workingPerWeek: 5,
+    workingPerDay: 9,
 
     calcMode: '하루',
     monthlySalary: 2000000,
-    startTime: 10,
+    startTime: 8,
     closingTime: 19,
-    payday: 20
+    payday: 30,
+    showSettingModal: false
   },
   getters,
   mutations,

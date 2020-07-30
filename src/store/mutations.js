@@ -4,9 +4,6 @@ export default {
   [types.SET_MONTHLY_SALARY] (state, payload) {
     state.monthlySalary = payload;
   },
-  [types.SET_YEAR_SALARY] (state, payload) {
-    state.yearSalary = payload;
-  },
   [types.SET_START_TIME] (state, payload) {
     state.startTime = payload;
   },
@@ -18,6 +15,16 @@ export default {
   },
   [types.SET_CALC_MODE] (state, payload) {
     state.calcMode = payload;
+  },
+  [types.SET_WORKING_PER_WEEK] (state, payload) {
+    state.workingPerWeek = payload;
+  },
+  [types.SET_WORKING_PER_DAY] (state, payload) {
+    state.workingPerDay = payload;
+  },
+  [types.SET_SHOW_SETTING_MODAL] (state, payload) {
+    console.log('dexter : payload : ', payload);
+    state.showSettingModal = payload;
   }
 }
 
