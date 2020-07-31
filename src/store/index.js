@@ -18,7 +18,7 @@ export default new Vuex.Store({
     monthlySalary: 2000000,
     startTime: 8,
     closingTime: 19,
-    payday: 30,
+    payday: 1,
     showSettingModal: false
   },
   getters,

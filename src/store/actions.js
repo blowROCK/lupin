@@ -22,6 +22,5 @@ export const calcMode = ({ commit }, payload) => {
   commit(types.SET_CALC_MODE, payload);
 };
 export const showSettingModal = ({ commit }, payload) => {
-  console.log('dexter : commit payload : ', commit,payload);
   commit(types.SET_SHOW_SETTING_MODAL, payload);
 };

@@ -23,7 +23,6 @@ export default {
     state.workingPerDay = payload;
   },
   [types.SET_SHOW_SETTING_MODAL] (state, payload) {
-    console.log('dexter : payload : ', payload);
     state.showSettingModal = payload;
   }
 }

@@ -140,7 +140,5 @@ export default {
 #Lupin {
   width: 250px;
   height: 400px;
-  padding: 5px;
-  box-sizing: border-box;
 }
 </style>

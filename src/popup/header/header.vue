@@ -11,7 +11,12 @@
       </el-radio-group>
     </el-col>
     <el-col :span="4">
-      <el-button @click="openModal" class="iconBox" size="mini" icon="el-icon-setting"></el-button>
+      <el-button
+        @click="openModal"
+        class="iconBox"
+        size="mini"
+        icon="el-icon-setting"
+      ></el-button>
     </el-col>
   </el-row>
 </template>
@@ -22,28 +27,33 @@ export default {
   components: {},
   props: {
     changeMode: Function,
-    mode: String
+    mode: String,
   },
   computed: {
     showSettingModal() {
       return this.$store.getters.showSettingModal;
-    }
+    },
   },
   methods: {
     changeHandler(e) {
       this.$emit("on-change-mode", e);
     },
-    openModal(){
-      console.log('dexter --------------OPEN MODAL-------------');
+    openModal() {
+      console.log("dexter --------------OPEN MODAL-------------");
       this.$store.dispatch("showSettingModal", true);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 #header {
-  margin-bottom: 5px;
   text-align: center;
+  margin-bottom: 8px;
+  padding: 15px 5px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgb(189 189 189);
+  box-shadow: 0px 2px 2px 0px rgb(189 189 189);
+
   .iconBox {
     border: 0;
     font-size: 1rem;
