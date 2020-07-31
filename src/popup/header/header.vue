@@ -39,7 +39,7 @@ export default {
       this.$emit("on-change-mode", e);
     },
     openModal() {
-      console.log("dexter --------------OPEN MODAL-------------");
+      console.log("dexter - -------------OPEN MODAL-------------");
       this.$store.dispatch("showSettingModal", true);
     },
   },
