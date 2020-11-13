@@ -51,7 +51,8 @@ export default {
   margin-bottom: 8px;
   padding: 15px 5px;
   font-size: 1.1rem;
-  border-bottom: 1px solid rgb(189, 189, 189);
+  border-bottom: 1px solid rgb(189 189 189);
+  box-shadow: 0px 2px 2px 0px rgb(189 189 189);
 
   .iconBox {
     border: 0;
